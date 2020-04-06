@@ -28,9 +28,10 @@ public class RestEndPoint {
 	}
 	
 	@PostMapping("/register")
-	public void registerUser(@RequestBody UserEntity theUser) {
+	public String registerUser(@RequestBody UserEntity theUser) {
 		System.out.println("cached data: " +theUser);
 		this.regRepo.save(theUser);
+		return "registered";
 	}
 	
 	@PostMapping("/login")
