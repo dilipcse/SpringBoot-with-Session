@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,8 +18,7 @@ import com.IdentityManagement.System.RestServices.RestEndPoint;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = RestEndPoint.class)
-@SpringBootTest
-class TestController {
+public class TestController {
 	
 	@Autowired
 	private MockMvc mockMvc ;
@@ -29,7 +27,7 @@ class TestController {
 	RegisterRepository regRepo;
 	
 	@Test
-	void registerTest() throws Exception {
+	public void registerTest() throws Exception {
 		//Mockito.when(regRepo.save(user)).thenReturn();
 		String msg = "{\n"+
 					 " \"name\" : \"dilip\",\n " +
